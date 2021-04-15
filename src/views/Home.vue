@@ -1,12 +1,17 @@
 <template>
   <div class="home">
     <video src="../assets/media/videos/hub-collection-watches-cover.mp4" type="video/mp4" autoplay="" playsinline="" loop="" preload="auto"></video>
-    <div class="text-top">
+    <div class="text-top" style="height: 100vh; position: relative">
       <h1>The Rolex World</h1>
       <h2>Sports, the arts and exploration</h2>
+      <div class="scroll">
+          <p>Scroll</p>
+          <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="diagonal-box" style="position: absolute; bottom: 0">
     </div>
-    <div class="diagonal-box">
     </div>
+    <div style="height: 5vh"></div>
     <div class="main-content">
       <div class="main-text-top">
         <h1>Rolex Exploration</h1>
@@ -23,9 +28,27 @@
             chronometric precision, a waterproof Oyster case, and self-winding of the movement via a Perpetual rotor.
             Displaying hours, minutes and seconds, made exclusively of  Oystersteel and featuring a sophisticated finish,
             these are chronometer wristwatches in their purest form.</p>
-          <a href="" class="button">Discover All</a>
+          <a href="#" class="button">Discover All</a>
         </div>
       </div>
+      <div class="space"></div>
+      <div class="content-product">
+        <div class="content-text">
+          <h1>Designed For Exploration</h1>
+          <div class="line2"></div>
+          <p>Presented in 1953, the Explorer is emblematic of the close ties between Rolex and exploration.
+            In the 1930s, the brand began to equip numerous Himalayan expeditions with Oyster watches. Among
+            these was the group that Sir Edmund Hillary and Tenzing Norgay were part of when they became the
+            first to reach the summit of Mount Everest, at 8,848 metres (29,028 feet). This pioneering move
+            illustrated the company's ambition to use the world as a laboratory, testing its watches in real
+            conditions in order to continually improve them. The feedback that Rolex received from the members
+            of these different expeditions therefore had a direct influence on the evolution of its watches,
+            making them more precise and robust.</p>
+          <a href="#" class="button2">Discover All</a>
+        </div>
+        <img src="../assets/media/images/explorer.png" alt="Explorer">
+      </div>
+      <div class="space"></div>
     </div>
   </div>
 </template>
@@ -77,6 +100,51 @@ video {
   justify-content: center;
 }
 
+.scroll {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  z-index: 999999;
+  position: absolute;
+  bottom: 14%;
+  right: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  animation: translate-bottom .3s, bounce 3s ease-in-out infinite;
+}
+
+.scroll:hover {
+  color: #006039;
+  cursor: pointer;
+
+}
+
+@keyframes translate-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(16px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .diagonal-box {
   background-color: white;
   transform: skewY(-4deg);
@@ -84,12 +152,15 @@ video {
   width: 100%;
 }
 
+.space {
+  height: 20vh;
+}
+
 .main-content {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
   color: black;
 }
 
@@ -141,9 +212,6 @@ video {
   border: 1px solid black;
   width: 30%;
   margin-top: 20px;
-}
-
-.content-text > .line {
   position: absolute;
   left: -10%;
 }
@@ -152,6 +220,7 @@ video {
   margin: 40px 0 0 20px;
   line-height: 20px;
   width: 70%;
+  text-align: justify;
 }
 
 .button {
@@ -173,4 +242,30 @@ video {
   transform: scale(.9);
 }
 
+.line2 {
+  border: 1px solid black;
+  width: 30%;
+  margin-top: 20px;
+  position: absolute;
+  right: -10%;
+}
+
+.button2 {
+  transform: scale(1);
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  text-transform: uppercase;
+  border: 1px solid black;
+  cursor:pointer;
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  font-size:1rem;
+  padding:10px 25px;
+  text-decoration:none;
+}
+
+.button2:hover {
+  transform: scale(.9);
+}
 </style>
